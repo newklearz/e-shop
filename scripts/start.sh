@@ -26,11 +26,14 @@ concat_profiles() {
   fi
 }
 
+# Set the current working directory to the root of the project
+cd "$(dirname "$0")"/..
+
 # Create target directory for the logs if it doesn't exist.
 mkdir -p "target"
 
-# Build all services
-./gradlew clean build
+## Build all services
+#./gradlew clean build
 
 if [ $elk ]; then
   profiles="$elk"
